@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Currency Exchange</title>
+</head>
+<body>
+
+  <h1>Live Currency Exchange</h1>
+  
+  <select id="fromCurrency">
+    <!-- Add options for different currencies -->
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <!-- Add more currencies as needed -->
+  </select>
+
+  <input type="number" id="amount" placeholder="Enter amount">
+
+  <select id="toCurrency">
+    <!-- Add options for different currencies -->
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <!-- Add more currencies as needed -->
+  </select>
+
+  <button onclick="getExchangeRate()">Get Exchange Rate</button>
+
+  <p id="result"></p>
+
+  <script>
+    function getExchangeRate() {
+      const fromCurrency = document.getElementById('fromCurrency').value;
+      const toCurrency = document.getElementById('toCurrency').value;
+      const amount = document.getElementById('amount').value;
+
+      const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+      const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency}?apikey=${apiKey}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const rate = data.rates[toCurrency];
+          const result = amount * rate;
+          document.getElementById('result').innerText = `${amount} ${fromCurrency} is ${result.toFixed(2)} ${toCurrency}`;
+        })
+        .catch(error => console.error('Error fetching exchange rates:', error));
+    }
+  </script>
+
+</body>
+</html>
