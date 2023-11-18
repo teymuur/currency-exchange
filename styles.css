@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 50px;
+    background-image: url("bg-image.jpg");
+    background-size: cover;
   }
 
   h1 {
