@@ -1,7 +1,11 @@
 const fromCurrency = document.getElementById('fromCurrency');
 const toCurrency = document.getElementById('toCurrency');
 const amount = document.getElementById('amount');
-
+$(document).ready(function () {
+    $('select').selectize({
+        sortField: 'text'
+    });
+});
 function getExchangeRate() {
 
 

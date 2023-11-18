@@ -14,7 +14,7 @@ body {
   select, input {
     margin: 10px;
     padding: 8px;
-    font-size: 16px;
+  
   }
 
   #result {
@@ -23,7 +23,7 @@ body {
     color: #1e90ff;
   }
   .panel {
-
+ 
     max-width: 800px;
     margin: 10px auto;
     background-color: #fff;
