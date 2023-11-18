@@ -37,7 +37,14 @@ function getExchangeRate() {
       }
     });
   }
-  const currencies = ['CAD', 'INR', 'CNY', 'JPY', 'GBP', 'AUD'];
+  const currencies = [
+    'USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD',
+    'NOK', 'MXN', 'SGD', 'HKD', 'KRW', 'TRY', 'INR', 'BRL', 'ZAR', 'RUB',
+    'DZD', 'ARS', 'BHD', 'BDT', 'BGN', 'CAD', 'CLP', 'COP', 'CRC', 'CZK',
+    'DKK', 'EGP', 'HUF', 'IDR', 'ILS', 'INR', 'KWD', 'LKR', 'MAD', 'MYR',
+    'NGN', 'NPR', 'PEN', 'PHP', 'PKR', 'PLN', 'QAR', 'RON', 'SAR', 'THB',
+    'TWD', 'UAH', 'VND'
+  ];
   addCurrencyOptions(currencies);
 fromCurrency.addEventListener("input",getExchangeRate)
 amount.addEventListener("input",getExchangeRate)
