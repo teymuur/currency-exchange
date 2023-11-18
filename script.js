@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 });
 function getExchangeRate() {
-
+    console.log(1)
 
     const apiKey = 'YOUR_API_KEY';
     const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency.value}?apiKey=${apiKey}`;
@@ -16,6 +16,7 @@ function getExchangeRate() {
       .then(response => response.json())
       .then(data => {
         const rate = data.rates[toCurrency.value];
+        console.log(1);
         const result = amount.value * rate;
         document.getElementById('result').innerText = `${amount.value} ${fromCurrency.value} is ${result.toFixed(2)} ${toCurrency.value}`;
       })
@@ -25,7 +26,7 @@ function getExchangeRate() {
   function addCurrencyOptions(currencyCodes) {
     const fromCurrencySelect = document.getElementById('fromCurrency');
     const toCurrencySelect = document.getElementById('toCurrency');
-
+    
     // Loop through the array of currency codes
     currencyCodes.forEach(currencyCode => {
       // Check if the option already exists
@@ -50,6 +51,11 @@ function getExchangeRate() {
     'TWD', 'UAH', 'VND'
   ];
   addCurrencyOptions(currencies);
-fromCurrency.addEventListener("input",getExchangeRate)
-amount.addEventListener("input",getExchangeRate)
-toCurrency.addEventListener("input",getExchangeRate)
+  
+  $(document).ready(function () {
+    $('select').selectize({
+        sortField: 'text'
+    });
+
+    $('#fromCurrency, #toCurrency, #amount').on('change input', getExchangeRate);
+});  
