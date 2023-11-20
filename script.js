@@ -66,10 +66,8 @@ function getExchangeRate() {
       toCurrency.value = temp;
 
       // Trigger the getExchangeRate function to update the result
-     try{ getExchangeRate();}
-     catch(error){
-      console.error(error)
-     }
+      getExchangeRate();
+     
   });
 });  
 
