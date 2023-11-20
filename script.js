@@ -59,16 +59,16 @@ function getExchangeRate() {
 
     $('#fromCurrency, #toCurrency, #amount').on('change input', getExchangeRate);
 
-    $('#reverseButton').on('click', function () {
+    document.getElementById("reverseButton").onclick = function () {
       // Swap values of fromCurrency and toCurrency
       const temp = fromCurrency.value;
       fromCurrency.value = toCurrency.value;
       toCurrency.value = temp;
 
       // Trigger the getExchangeRate function to update the result
-      getExchangeRate();
+    
      
-  });
+  };
 });  
 
  
