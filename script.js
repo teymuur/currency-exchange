@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 });
 function getExchangeRate() {
-  
+
 
     const apiKey = 'YOUR_API_KEY';
     const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency.value}?apiKey=${apiKey}`;
@@ -59,3 +59,13 @@ function getExchangeRate() {
 
     $('#fromCurrency, #toCurrency, #amount').on('change input', getExchangeRate);
 });  
+
+    $('#reverseButton').on('click', function () {
+        // Swap values of fromCurrency and toCurrency
+        const temp = fromCurrency.value;
+        fromCurrency.value = toCurrency.value;
+        toCurrency.value = temp;
+
+        // Trigger the getExchangeRate function to update the result
+        getExchangeRate();
+    });
