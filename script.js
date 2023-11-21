@@ -67,7 +67,7 @@ function getExchangeRate() {
 
       // Trigger the getExchangeRate function to update the result
     
-     
+     getExchangeRate();
   };
 });  
 
