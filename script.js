@@ -9,7 +9,7 @@ $(document).ready(function () {
 function getExchangeRate() {
 
 
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = '207fad7e204d8eb308f3633f';
     const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency.value}?apiKey=${apiKey}`;
 
     fetch(apiUrl)
@@ -63,13 +63,14 @@ function getExchangeRate() {
 });  
 function reverseC() {
   // Swap values of fromCurrency and toCurrency
-  const temp = $('fromCurrency').val();
+  let temp = $('fromCurrency').val();
+  console.log(temp);
   $('fromCurrency').val($('toCurrency').val());
   $('toCurrency').val(temp);
   // Trigger the getExchangeRate function to update the result
 
  getExchangeRate();
 };
- fromCurrency.value = "EUR"
+
 
     toCurrency.value = "USD"
