@@ -10,7 +10,7 @@ function getExchangeRate() {
 
 
     const apiKey = '207fad7e204d8eb308f3633f';
-    const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency.value}?apiKey=${apiKey}`;
+    const apiUrl = `ttps://v6.exchangerate-api.com/v6/207fad7e204d8eb308f3633f/latest/USD`;
 
     fetch(apiUrl)
       .then(response => response.json())
@@ -63,10 +63,12 @@ function getExchangeRate() {
 });  
 function reverseC() {
   // Swap values of fromCurrency and toCurrency
-  let temp = $('fromCurrency').val();
+  let temp = fromCurrency.textContent;
   console.log(temp);
-  $('fromCurrency').val($('toCurrency').val());
-  $('toCurrency').val(temp);
+  fromCurrency.value = toCurrency.textContent;
+  toCurrency.value = temp;
+  // Trigger the getExchangeRate function to update the result
+  getExchangeRate();
   // Trigger the getExchangeRate function to update the result
 
  getExchangeRate();
