@@ -62,6 +62,7 @@ function getExchangeRate() {
     document.getElementById("reverseButton").onclick = function () {
       // Swap values of fromCurrency and toCurrency
       const temp = fromCurrency.value;
+      console.info(temp);
       fromCurrency.value = toCurrency.value;
       toCurrency.value = temp;
 
