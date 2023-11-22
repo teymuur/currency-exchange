@@ -61,11 +61,11 @@ function getExchangeRate() {
 
   
 });  
-function reverse() {
+function reverseC() {
   // Swap values of fromCurrency and toCurrency
-  const temp = fromCurrency.value;
-  fromCurrency.value = toCurrency.value;
-  toCurrency.value = temp;
+  const temp = $('fromCurrency').val();
+  $('fromCurrency').val($('toCurrency').val());
+  $('toCurrency').val(temp);
   // Trigger the getExchangeRate function to update the result
 
  getExchangeRate();
