@@ -10,7 +10,7 @@ function getExchangeRate() {
 
 
     const apiKey = '207fad7e204d8eb308f3633f';
-    const apiUrl = `ttps://v6.exchangerate-api.com/v6/207fad7e204d8eb308f3633f/latest/USD`;
+    const apiUrl = `https://open.er-api.com/v6/latest/${fromCurrency.value}?apiKey=${apiKey}`;
 
     fetch(apiUrl)
       .then(response => response.json())
