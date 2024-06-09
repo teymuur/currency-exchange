@@ -61,18 +61,7 @@ function getExchangeRate() {
 
   
 });  
-function reverseC() {
-  // Swap values of fromCurrency and toCurrency
-  let temp = fromCurrency.textContent;
-  console.log(temp);
-  fromCurrency.value = toCurrency.textContent;
-  toCurrency.value = temp;
-  // Trigger the getExchangeRate function to update the result
-  getExchangeRate();
-  // Trigger the getExchangeRate function to update the result
 
- getExchangeRate();
-};
 
 
     toCurrency.value = "USD"
